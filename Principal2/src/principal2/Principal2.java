@@ -17,16 +17,19 @@ public class Principal2 {
             int estado=sc.nextInt();
             
             Libro l=new Libro(titulo,precio,estado);
+            System.out.print("Ingrese cantidad de prestamos: ");
+            int cantPrest=sc.nextInt();
+            for (int j = 0; j < cantPrest; j++) {
+                System.out.print("Ingrese solicitante del libro: ");
+                String nom_sol=sc.nextLine();
+                System.out.print("Ingrese cantidad de días: ");
+                int cant_dias_sol=sc.nextInt();
+                System.out.print("¿Fue devuelto?Ingrese true si fue devuelto o false si no fue devuelto: ");
+                boolean devuelto=sc.nextBoolean();
             
-            System.out.print("Ingrese solicitante del libro: ");
-            String nom_sol=sc.nextLine();
-            System.out.print("Ingrese cantidad de días: ");
-            int cant_dias_sol=sc.nextInt();
-            System.out.print("¿Fue devuelto?Ingrese true si fue devuelto o false si no fue devuelto: ");
-            boolean devuelto=sc.nextBoolean();
-            
-            Prestamo p=new Prestamo(nom_sol,cant_dias_sol,devuelto);
-            
+                Prestamo p=new Prestamo(nom_sol,cant_dias_sol,devuelto);
+                l.agregarPrestamo(p);
+            }
             bib.agregarLibro(l);
         }
         
