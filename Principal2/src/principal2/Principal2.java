@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Principal2 {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        System.out.println("Ingrese la cantidad de planes: ");
+        System.out.print("Ingrese la cantidad de libros: ");
         int tamanio=sc.nextInt();
         Biblioteca bib =new Biblioteca(tamanio);
         for (int i = 0; i < tamanio; i++) {
@@ -44,9 +44,10 @@ public class Principal2 {
         
         System.out.println("Sumatoria de precio de reposición de extraviados: ");
         System.out.println(bib.sumaPrecioExtraviados());
-        
+        System.out.println("Ingrese  nombre del libro: ");
+        String nomLibrSol=sc.nextLine();
         System.out.println("Listado de solicitantes por titulo es:");
-        System.out.println(bib.listadoDeSolicitantes("Aaa"));
+        System.out.println(bib.listadoDeSolicitantes(nomLibrSol));
         
         System.out.println("Promedio de veces que fueron prestados los libros de la biblioteca: ");
         System.out.println(bib.promedioPrestamos());
