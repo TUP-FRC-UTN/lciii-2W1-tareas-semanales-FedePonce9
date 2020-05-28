@@ -1,4 +1,4 @@
-package principal;
+    package principal;
 
 import java.util.Scanner;
 
@@ -17,17 +17,23 @@ public class Principal {
             float deuda=sc.nextFloat();
             System.out.print("Ingrese la cantidad de cuotas del plan: ");
             int cuotas=sc.nextInt();
-            
             Plan p=new Plan(nombre,deuda,cuotas);
             
-            System.out.print("Ingrese demora del pago: ");
-            int demora=sc.nextInt();
-            System.out.print("Ingrese importe del pago: ");
-            float importe=sc.nextFloat();
-            System.out.print("Ingrese intereses Adicionales: ");
-            float interesesAdicionales=sc.nextFloat();
+            System.out.print("Ingrese la cantidad de pagos: ");
+            int pagos=sc.nextInt();
+            
+            for (int j = 0; j < pagos; j++) {
+                System.out.print("Ingrese demora del pago: ");
+                int demora=sc.nextInt();
+                System.out.print("Ingrese importe del pago: ");
+                float importe=sc.nextFloat();
+                System.out.print("Ingrese intereses Adicionales: ");
+                float interesesAdicionales=sc.nextFloat();
 
-            Pago pa=new Pago(demora,importe,interesesAdicionales);
+                Pago pa=new Pago(demora,importe,interesesAdicionales);
+                p.agregarPago(pa);
+            }
+            
         
             muni.agregarPlan(p);
             
